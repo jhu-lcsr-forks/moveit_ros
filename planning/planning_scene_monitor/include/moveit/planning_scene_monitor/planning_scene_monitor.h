@@ -496,6 +496,7 @@ private:
   /// the amount of time to wait when looking up transforms
   // Setting this to a non-zero value resolves issues when the sensor data is
   // arriving so fast that it is preceding the transform state.
+  // See https://github.com/ros-planning/moveit_ros/issues/465 for more info
   ros::Duration shape_transform_cache_lookup_wait_time_;
 
   /// timer for state updates.
