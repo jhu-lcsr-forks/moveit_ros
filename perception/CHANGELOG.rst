@@ -2,6 +2,9 @@
 Changelog for package moveit_ros_perception
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.4 (2014-12-20)
+------------------
+
 0.6.3 (2014-12-03)
 ------------------
 * port `#445 <https://github.com/ros-planning/moveit_ros/issues/445>`_ to indigo
