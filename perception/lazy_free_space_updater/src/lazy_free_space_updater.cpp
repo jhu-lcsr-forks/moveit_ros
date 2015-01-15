@@ -160,6 +160,7 @@ void LazyFreeSpaceUpdater::processThread()
     }
     ROS_DEBUG("Marking %lu cells as free...", (long unsigned int)(free_cells1.size() + free_cells2.size()));
 
+    tree_->lockRead();
     tree_->lockWrite();
 
     try
@@ -179,6 +180,7 @@ void LazyFreeSpaceUpdater::processThread()
       ROS_ERROR("Internal error while updating octree");
     }
     tree_->unlockWrite();
+    tree_->unlockRead();
     tree_->triggerUpdateCallback();
 
     ROS_DEBUG("Marked free cells in %lf ms", (ros::WallTime::now() - start).toSec() * 1000.0);
