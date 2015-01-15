@@ -159,37 +159,10 @@ private:
 
 };
 
-class OccMapMonTreeLock {
+class OccMapMonTreeLockBase {
   protected:
+    OccMapMonTreeLockBase() { }
     boost::shared_ptr<OccMapTree> tree_;
-};
-
-class OccMapMonTreeReadLock : public OccMapMonTreeLock {
-  public:
-    OccMapMonTreeReadLock(boost::shared_ptr<OccupancyMapMonitor> mon) : OccMapMonTreeLock() {
-      if(mon) {
-        tree_ = mon->getOcTreePtr();
-        tree_->lockRead();
-      }
-    }
-
-    virtual ~OccMapMonTreeReadLock() {
-      if(tree_) tree_->unlockRead();
-    }
-};
-
-class OccMapMonTreeWriteLock : public OccMapMonTreeLock {
-  public:
-    OccMapMonTreeWriteLock(boost::shared_ptr<OccupancyMapMonitor> mon) : OccMapMonTreeLock() {
-      if(mon) {
-        tree_ = mon->getOcTreePtr();
-        tree_->lockRead();
-      }
-    }
-
-    virtual ~OccMapMonTreeWriteLock() {
-      if(tree_) tree_->unlockWrite();
-    }
 };
 
 }
