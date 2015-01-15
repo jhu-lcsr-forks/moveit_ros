@@ -159,12 +159,6 @@ private:
 
 };
 
-class OccMapMonTreeLockBase {
-  protected:
-    OccMapMonTreeLockBase() { }
-    boost::shared_ptr<OccMapTree> tree_;
-};
-
 }
 
 #endif
