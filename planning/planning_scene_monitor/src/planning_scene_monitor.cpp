@@ -311,8 +311,7 @@ void planning_scene_monitor::PlanningSceneMonitor::scenePublishingThread()
   // publish the full planning scene
   moveit_msgs::PlanningScene msg;
   {
-    occupancy_map_monitor::OccMapTree::ReadLock lock;
-    if (octomap_monitor_) lock = octomap_monitor_->getOcTreePtr()->reading();
+    occupancy_map_monitor::OccMapTree::ReadLock lock(octomap_monitor_ ? octomap_monitor_->getOcTreePtr()->reading() : occupancy_map_monitor::OccMapTree::ReadLock());
     scene_->getPlanningSceneMsg(msg);
   }
   planning_scene_publisher_.publish(msg);
@@ -336,8 +335,7 @@ void planning_scene_monitor::PlanningSceneMonitor::scenePublishingThread()
             is_full = true;
           else
           {
-            occupancy_map_monitor::OccMapTree::ReadLock lock;
-            if (octomap_monitor_) lock = octomap_monitor_->getOcTreePtr()->reading();
+            occupancy_map_monitor::OccMapTree::ReadLock lock(octomap_monitor_ ? octomap_monitor_->getOcTreePtr()->reading() : occupancy_map_monitor::OccMapTree::ReadLock());
             scene_->getPlanningSceneDiffMsg(msg);
           }
           boost::recursive_mutex::scoped_lock prevent_shape_cache_updates(shape_handles_lock_); // we don't want the transform cache to update while we are potentially changing attached bodies
@@ -354,8 +352,7 @@ void planning_scene_monitor::PlanningSceneMonitor::scenePublishingThread()
           }
           if (is_full) 
           {
-            occupancy_map_monitor::OccMapTree::ReadLock lock;
-            if (octomap_monitor_) lock = octomap_monitor_->getOcTreePtr()->reading();
+            occupancy_map_monitor::OccMapTree::ReadLock lock(octomap_monitor_ ? octomap_monitor_->getOcTreePtr()->reading() : occupancy_map_monitor::OccMapTree::ReadLock());
             scene_->getPlanningSceneMsg(msg);
           }
           publish_msg = true;
