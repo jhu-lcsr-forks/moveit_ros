@@ -2,6 +2,11 @@
 Changelog for package moveit_ros_benchmarks_gui
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.5 (2015-01-24)
+------------------
+* update maintainers
+* Contributors: Michael Ferguson
+
 0.6.4 (2014-12-20)
 ------------------
 

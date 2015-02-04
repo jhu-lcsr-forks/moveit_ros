@@ -1,6 +1,6 @@
 <package>
   <name>moveit_ros_visualization</name>
-  <version>0.6.4</version>
+  <version>0.6.5</version>
   <description>Components of MoveIt that offer visualization</description>
 
   <author email="isucan@google.com">Ioan Sucan</author> 
@@ -8,6 +8,7 @@
   <author email="robot.moveit@gmail.com">Sachin Chitta</author>
 
   <maintainer email="isucan@google.com">Ioan Sucan</maintainer>
+  <maintainer email="mferguson@fetchrobotics.com">Michael Ferguson</maintainer>
 
   <license>BSD</license>
 
@@ -45,6 +46,7 @@
     <rviz plugin="${prefix}/robot_state_rviz_plugin_description.xml"/>
     <rviz plugin="${prefix}/planning_scene_rviz_plugin_description.xml"/>
     <rviz plugin="${prefix}/motion_planning_rviz_plugin_description.xml"/>
+    <rviz plugin="${prefix}/trajectory_rviz_plugin_description.xml"/>
   </export>
 
 </package>

@@ -1,6 +1,6 @@
 <package>
   <name>moveit_ros</name>
-  <version>0.6.4</version>
+  <version>0.6.5</version>
   <description>Components of MoveIt that use ROS</description>
   <author email="isucan@gmail.com">Ioan Sucan</author>
   <author email="robot.moveit@gmail.com">Sachin Chitta</author>
@@ -9,6 +9,7 @@
   <maintainer email="isucan@gmail.com">Ioan Sucan</maintainer>
   <maintainer email="robot.moveit@gmail.com">Sachin Chitta</maintainer>
   <maintainer email="acorn.pooley@sri.com">Acorn Pooley</maintainer>
+  <maintainer email="mferguson@fetchrobotics.com">Michael Ferguson</maintainer>
 
   <license>BSD</license>
 
