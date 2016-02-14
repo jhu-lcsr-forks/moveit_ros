@@ -207,7 +207,7 @@ void planning_scene_monitor::PlanningSceneMonitor::initialize(const planning_sce
   }
   else
   {
-    ROS_ERROR("Robot model not loaded");
+    ROS_ERROR_STREAM("Robot model not loaded from: "<<robot_description_);
   }
 
   publish_planning_scene_frequency_ = 2.0;
